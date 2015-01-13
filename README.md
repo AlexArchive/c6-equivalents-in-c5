@@ -97,7 +97,7 @@ The using static feature allows you to refer to a static class at the top of you
 C# 6:
 ```c#
 using System;
-using System.Console;
+using static System.Console;
 
 public class Program
 {
