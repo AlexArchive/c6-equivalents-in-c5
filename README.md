@@ -333,4 +333,9 @@ Additional learning resources:
 - [C# 6 in action](http://codeblog.jonskeet.uk/2014/12/08/c-6-in-action/)
 
 
+## License
+
+This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) License.
+
+
 
