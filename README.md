@@ -319,9 +319,18 @@ public static User Find(string username)
 ```
 It should be noted that the syntax rules for the `nameof` operator are expected to change prior to the final release.
 
+## About
 
+Inspired by:
 
+- [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 
+Additional learning resources:
+
+- [Langauge features in C# 6](https://roslyn.codeplex.com/wikipage?title=Language%20Feature%20Status&referringTitle=Documentation)
+- [C# feature descriptions](https://www.codeplex.com/Download?ProjectName=roslyn&DownloadId=930852)
+- [What's new in C# 6.0? by Scott Allen](http://www.ndcvideos.com/#/app/video/2591)
+- [C# 6 in action](http://codeblog.jonskeet.uk/2014/12/08/c-6-in-action/)
 
 
 
