@@ -52,7 +52,7 @@ public class User
 }
 ```
 
-## Paramaterless struct constructors
+## Parameterless struct constructors
 
 It used to be erroneous to define a parameter-less constructor for a `struct` type. This is now allowed.
 
