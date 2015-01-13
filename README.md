@@ -227,15 +227,44 @@ C# 6:
 ```c#
 try
 {
-
+    throw new AggregateException();
 }
 catch (AggregateException ex) if (ex.Data.Count > 1)
 {
+	// Handle the AggregateException
+}
+catch (Exception exception)
+{
+	// Because the filter expression returns false the first catch is skipped.
+	// Handle the general Exception instead.
 }
 ```
 C# 5:
 
-As far as I know, there is no direct equivalent. (You should feel to correct this section if I am wrong.)
+```c#
+try
+{
+    try
+    {
+        throw new AggregateException();
+    }
+    catch (AggregateException ex)
+    {
+        if (ex.Data.Count > 1)
+        {
+            // Handle the AggregateException
+        }
+        else
+        {
+            throw;
+        }
+    }
+}
+catch (Exception ex)
+{
+	// Handle the general Exception
+}
+```
 
 ## Null-conditional operator
 
