@@ -7,133 +7,132 @@
 Auto-property initializers can be used to succinctly associate a default value with a property. They are syntactically similar to field initializers. 
 
 C# 6: 
-
-	public class User
-	{
-	    public Guid Id { get; set; } = Guid.NewGuid();
-	    public List<string> Answers { get; set; } = new List<string>();
-	}
-
+```c#
+public class User
+{
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public List<string> Answers { get; set; } = new List<string>();
+}
+```
 C# 5: 
+```c#
+public class User
+{
+    public Guid Id { get; set; }
+    public List<string> Answers { get; set; }
 
-	public class User
-	{
-	    public Guid Id { get; set; }
-	    public List<string> Answers { get; set; }
-	
-	    public User()
-	    {
-	        Id = Guid.NewGuid();
-	        Answers = new List<string>();
-	    }
-	}
-
+    public User()
+    {
+        Id = Guid.NewGuid();
+        Answers = new List<string>();
+    }
+}
+```
 
 ## Getter-only properties
 
 Getter-only properties - as the name would suggest - allow you to define a read-only property much more succinctly than ever before.
 
 C# 6: 
-
-	public class User
-	{
-	    public Guid Id { get; } = Guid.NewGuid();
-	}
-
+```c#
+public class User
+{
+    public Guid Id { get; } = Guid.NewGuid();
+}
+```
 C# 5:
-
-	public class User
-	{
-	    private readonly Guid _id = new Guid();
-	    public Guid Id
-	    {
-	        get { return _id; }
-	    }
-	}
-
+```c#
+public class User
+{
+    private readonly Guid _id = new Guid();
+    public Guid Id
+    {
+        get { return _id; }
+    }
+}
+```
 
 ## Paramaterless struct constructors
 
 It used to erroneous to define a parameter-less constructor for a `struct` type. It is no longer erroneous. 
 
 C# 6: 
+```c#
+public struct Rational
+{
+    private long numerator;
+    private long denominator;
 
-	public struct Rational
-	{
-	    private long numerator;
-	    private long denominator;
-	
-	    public Rational()
-	    {
-	        numerator = 0;
-	        denominator = 1;
-	    }
-	}
+    public Rational()
+    {
+        numerator = 0;
+        denominator = 1;
+    }
+}
+```
+
 C# 5: 
+```c#
+public struct Rational 
+{
+    private long numerator;
+    private long denominator;
 
-	public struct Rational 
-	{
-	    private long numerator;
-	    private long denominator;
-	
-	    private Rational(long numerator, long denominator)
-	    {
-	        this.numerator = numerator;
-	        this.denominator = denominator;
-	    }
-	
-	    public static Rational Create()
-	    {
-	        return new Rational(0, 1);
-	    }
-	}
+    private Rational(long numerator, long denominator)
+    {
+        this.numerator = numerator;
+        this.denominator = denominator;
+    }
 
+    public static Rational Create()
+    {
+        return new Rational(0, 1);
+    }
+}
+```
 ## Using static
 
 The using static feature allows you to declare a static class at the top of your code file and then subsequently access all of that classes static members without full qualification.
 
 C# 6:
+```c#
+using System;
+using System.Console;
 
-	using System;
-	using System.Console;
-	
-	public class Program
-	{
-	    private static void Main()
-	    {
-	        Title = "Demo";
-	        var name = ReadLine();
-	        ForegroundColor = ConsoleColor.Red;
-	        Write("Hello ");
-	        ForegroundColor = ConsoleColor.White;
-	        Write(name);
-	        ReadKey();
-	    }
-	}
-
-
+public class Program
+{
+    private static void Main()
+    {
+        Title = "Demo";
+        var name = ReadLine();
+        ForegroundColor = ConsoleColor.Red;
+        Write("Hello ");
+        ForegroundColor = ConsoleColor.White;
+        Write(name);
+        ReadKey();
+    }
+}
+```
 
 C# 5:
-
-	using System;
+```c#
+using System;
 	
-	public class Program
-    {
-        private static void Main()
-        {
-            Console.Title = "Demo";
-            var name = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("Hello ");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write(name);
-            Console.ReadKey();
-        }
-    }
-
+public class Program
+{
+	private static void Main()
+	{
+		Console.Title = "Demo";
+		var name = Console.ReadLine();
+		Console.ForegroundColor = ConsoleColor.Red;
+		Console.Write("Hello ");
+		Console.ForegroundColor = ConsoleColor.White;
+		Console.Write(name);
+		Console.ReadKey();
+	}
+}
+```
 It should be noted that the syntax rules for using static are expected to change prior to the final release.
-
-
 
 ## Expression-bodied members 
 
@@ -141,45 +140,48 @@ Expression-bodied members allow you to emit syntax (such as braces and semicolon
 
 C# 6:
 
-	public class Answer
-	{
-	    private List<string> _voters = new List<string>();
-	
-	    public bool CanVote(string username) => !_voters.Contains(username);
-	}
+```c#
+public class Answer
+{
+    private List<string> _voters = new List<string>();
+
+    public bool CanVote(string username) => !_voters.Contains(username);
+}
+```
 
 C# 5:
+```c#
+public class Answer
+{
+    private List<string> _voters = new List<string>();
 
-	public class Answer
-	{
-	    private List<string> _voters = new List<string>();
-	
-	    public bool CanVote(string username)
-	    {
-	        return !_voters.Contains(username);
-	    }
-	}
-
+    public bool CanVote(string username)
+    {
+        return !_voters.Contains(username);
+    }
+}
+```
 ## Index initializers
 
 Index initializers offer a more elegant way to give dictionaries and other objects with indexers an initial set of elements.
 
 C# 6: 
-
-	var postData = new Dictionary<string, string>
-	{
-	    ["username"] = "admin",
-	    ["password"] = "password",
-	    ["authToken"] = "123"
-	}
+```c#
+var postData = new Dictionary<string, string>
+{
+    ["username"] = "admin",
+    ["password"] = "password",
+    ["authToken"] = "123"
+}
+```
 
 C# 5: 
-
-	var postData = new Dictionary<string, string>();
-	postData["username"] = "admin";
-	postData["password"] = "password";
-	postData["authToken"] = "123";
-
+```c#
+var postData = new Dictionary<string, string>();
+postData["username"] = "admin";
+postData["password"] = "password";
+postData["authToken"] = "123";
+```
 
 It should be noted that index initializers are not necessarily an alternative to the collection initializers syntax (introduced with C# 3.0).
 
@@ -188,49 +190,49 @@ It should be noted that index initializers are not necessarily an alternative to
 It used to be erroneous to use the `await` keyword in a `catch`  or `finally` block. It is no longer erroneous. 
 
 C# 6:
-
-	var logger = new ExceptionLogger();
-	try
-	{
-	}
-	catch (Exception exception)
-	{
-	    await logger.LogAsync(exception);
-	    throw;
-	}
-
+```c#
+var logger = new ExceptionLogger();
+try
+{
+}
+catch (Exception exception)
+{
+    await logger.LogAsync(exception);
+    throw;
+}
+```
 C# 5:
+```c#
+var logger = new ExceptionLogger();
+ExceptionDispatchInfo capturedException = null;
+try
+{
+}
+catch (Exception exception)
+{
+    capturedException = ExceptionDispatchInfo.Capture(exception);
+}
 
-	var logger = new ExceptionLogger();
-	ExceptionDispatchInfo capturedException = null;
-	try
-	{
-	}
-	catch (Exception exception)
-	{
-	    capturedException = ExceptionDispatchInfo.Capture(exception);
-	}
-	
-	if (capturedException != null)
-	{
-	    await logger.LogAsync(capturedException.SourceException);
-	    capturedException.Throw();
-	} 
-	
+if (capturedException != null)
+{
+    await logger.LogAsync(capturedException.SourceException);
+    capturedException.Throw();
+} 
+```	
 ## Exception filters
 
 Exception filters allow you to conditionally `catch` exceptions according to a *filter*. If the filter expression returns `false` then the exception will not be handled by that particular `catch` block. 
 
 C# 6: 
+```c#
+try
+{
 
-	try
-	{
-	
-	}
-	catch (AggregateException ex) if (ex.Data.Count > 1)
-	{
-	}
-
+}
+catch (AggregateException ex) if (ex.Data.Count > 1)
+{
+}
+```
 C# 5:
 
 As far as I know, there is no direct equivilanet. (You should feel to correct this section if I am wrong.)
@@ -241,44 +243,43 @@ The null-conditional operator removes the need for tedious null-checking.
 
 
 C# 6:
+```c#
+var user = User.Find("byteblast");
 
-	var user = User.Find("byteblast");
-	
-	if (user?.Answers != null)
-	{
-	    Console.WriteLine("Answer count: " + user.Answers.Count);
-	}
-
+if (user?.Answers != null)
+{
+    Console.WriteLine("Answer count: " + user.Answers.Count);
+}
+```
 
 C# 5:
 
+```c#
+var user = User.Find("byteblast");
 
-	var user = User.Find("byteblast");
-	
-	if (user != null && user.Answers != null)
-	{
-	    Console.WriteLine("Answer count: " + user.Answers.Count);
-	}
-
-
+if (user != null && user.Answers != null)
+{
+    Console.WriteLine("Answer count: " + user.Answers.Count);
+}
+```
 
 ## String interpolation
 
 String interpolation allows you to *interpolate* (insert) values  in the string in a natural and highly readable way. 
 
 C# 6: 
-
-	var expected = 201;
-	var actual = 404;
-	throw new Exception("Expected status code to be \{expected}, but instead was \{actual}.");
+```c#
+var expected = 201;
+var actual = 404;
+throw new Exception("Expected status code to be \{expected}, but instead was \{actual}.");
+```
 
 C# 5:
-
-	var expected = 201;
-	var actual = 404;
-	throw new Exception(string.Format("Expected status code to be {0}, but instead was 
-	{1}.", expected, actual));
-
+```c#
+var expected = 201;
+var actual = 404;
+throw new Exception(string.Format("Expected status code to be {0}, but instead was {1}.", expected, actual));
+```
 ##nameof operator
 
 The `nameof` operator takes a program element (such as a variable or property) and returns that program element's name as a string. 
@@ -286,32 +287,32 @@ The `nameof` operator takes a program element (such as a variable or property) a
 In a nut shell, it removes the need to define error-prone string literals who are are sensitive to typos and botched refactorings.
 
 C# 6:
+```c#
+public static User Find(string username)
+{
+    if (username == null)
+    {
+        throw new ArgumentNullException(nameof(username));
+    }
 
-	public static User Find(string username)
-	{
-	    if (username == null)
-	    {
-	        throw new ArgumentNullException(nameof(username));
-	    }
-	
-	    // Contrived.
-	    return null;
-	}
-
+    // Contrived.
+    return null;
+}
+```
 
 C# 5:
+```c#
+public static User Find(string username)
+{
+    if (username == null)
+    {
+        throw new ArgumentNullException("username");
+    }
 
-	public static User Find(string username)
-	{
-	    if (username == null)
-	    {
-	        throw new ArgumentNullException("username");
-	    }
-	
-	    // Contrived.
-	    return null;
-	}
-
+    // Contrived.
+    return null;
+}
+```
 
 
 
