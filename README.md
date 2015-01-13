@@ -136,7 +136,7 @@ It should be noted that the syntax rules for using static are expected to change
 
 ## Expression-bodied members 
 
-Expression-bodied members allow you to emit syntax (such as braces and semicolons) and keywords (such as `return` ) that the compiler can easily infer when the whole of the body is only a single expression.
+Expression-bodied members allow you to emit syntax (such as braces and semicolons) and keywords (such as `return`) that the compiler can easily infer when the whole of the body is only a single expression.
 
 C# 6:
 
@@ -163,7 +163,7 @@ public class Answer
 ```
 ## Index initializers
 
-Index initializers offer a more elegant way to give dictionaries and other objects with indexers an initial set of elements.
+Index initializers offer a more elegant way to give an initial set of elements to dictionaries and other similarly indexed objects.
 
 C# 6: 
 ```c#
@@ -235,7 +235,7 @@ catch (AggregateException ex) if (ex.Data.Count > 1)
 ```
 C# 5:
 
-As far as I know, there is no direct equivilanet. (You should feel to correct this section if I am wrong.)
+As far as I know, there is no direct equivalent. (You should feel to correct this section if I am wrong.)
 
 ## Null-conditional operator
 
@@ -286,9 +286,9 @@ It should be noted that the syntax rules for string interpolation are expected t
 
 ##nameof operator
 
-The `nameof` operator takes a program element (such as a variable or property) and returns that program element's name as a string. 
+The `nameof` operator takes an object (such as a variable or property) and returns that object's name as a string. 
 
-In a nut shell, it removes the need to define error-prone string literals who are are sensitive to typos and botched refactorings.
+In a nutshell, it removes the need to define hard-coded string literals containing variable names, whose values may not be updated after a botched or automated refactoring.
 
 C# 6:
 ```c#
