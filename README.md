@@ -54,7 +54,7 @@ public class User
 
 ## Paramaterless struct constructors
 
-It used to be erroneous to define a parameter-less constructor for a `struct` type. It is no longer erroneous. 
+It used to be erroneous to define a parameter-less constructor for a `struct` type. This is now allowed.
 
 C# 6: 
 ```c#
@@ -187,7 +187,7 @@ It should be noted that index initializers are not necessarily an alternative to
 
 ## Await in catch/finally
 
-It used to be erroneous to use the `await` keyword in a `catch`  or `finally` block. It is no longer erroneous. 
+It used to be erroneous to use the `await` keyword in a `catch`  or `finally` block. This is now allowed.
 
 C# 6:
 ```c#
