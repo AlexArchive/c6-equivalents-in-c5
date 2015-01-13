@@ -92,7 +92,7 @@ public struct Rational
 ```
 ## Using static
 
-The using static feature allows you to declare a static class at the top of your code file and then subsequently access all of that classes static members without full qualification.
+The using static feature allows you to refer to a static class at the top of your code file and then subsequently access all of that classes static members without full qualification.
 
 C# 6:
 ```c#
@@ -280,6 +280,10 @@ var expected = 201;
 var actual = 404;
 throw new Exception(string.Format("Expected status code to be {0}, but instead was {1}.", expected, actual));
 ```
+
+It should be noted that the syntax rules for string interpolation are expected to change prior to the final release.
+
+
 ##nameof operator
 
 The `nameof` operator takes a program element (such as a variable or property) and returns that program element's name as a string. 
@@ -313,6 +317,7 @@ public static User Find(string username)
     return null;
 }
 ```
+It should be noted that the syntax rules for the `nameof` operator are expected to change prior to the final release.
 
 
 
