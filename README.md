@@ -37,14 +37,14 @@ C# 6:
 ```c#
 public class User
 {
-    public Guid Id { get; } = Guid.NewGuid();
+    public Guid Id { get; };
 }
 ```
 C# 5:
 ```c#
 public class User
 {
-    private readonly Guid _id = new Guid();
+    private readonly Guid _id;
     public Guid Id
     {
         get { return _id; }
@@ -54,7 +54,7 @@ public class User
 
 ## Paramaterless struct constructors
 
-It used to erroneous to define a parameter-less constructor for a `struct` type. It is no longer erroneous. 
+It used to be erroneous to define a parameter-less constructor for a `struct` type. It is no longer erroneous. 
 
 C# 6: 
 ```c#
