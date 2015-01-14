@@ -136,7 +136,7 @@ It should be noted that the syntax rules for using static are expected to change
 
 ## Expression-bodied members 
 
-Expression-bodied members allow you to emit syntax (such as braces and semicolons) and keywords (such as `return`) that the compiler can easily infer when the whole of the body is only a single expression.
+Expression-bodied members allow you to omit syntax (such as braces and semicolons) and keywords (such as `return`) that the compiler can easily infer when the whole of the body is only a single expression.
 
 C# 6:
 
