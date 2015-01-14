@@ -356,7 +356,7 @@ Inspired by:
 
 Additional learning resources:
 
-- [Langauge features in C# 6](https://roslyn.codeplex.com/wikipage?title=Language%20Feature%20Status&referringTitle=Documentation)
+- [Language features in C# 6](https://roslyn.codeplex.com/wikipage?title=Language%20Feature%20Status&referringTitle=Documentation)
 - [C# feature descriptions](https://www.codeplex.com/Download?ProjectName=roslyn&DownloadId=930852)
 - [What's new in C# 6.0? by Scott Allen](http://www.ndcvideos.com/#/app/video/2591)
 - [C# 6 in action](http://codeblog.jonskeet.uk/2014/12/08/c-6-in-action/)
