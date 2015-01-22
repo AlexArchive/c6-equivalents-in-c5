@@ -315,7 +315,7 @@ It should be noted that the syntax rules for string interpolation are expected t
 
 ##nameof operator
 
-The `nameof` operator takes an object (such as a variable or property) and returns that object's name as a string. 
+The `nameof` operator takes an identifier (such as a variable name or method name) and returns that object's name as a string. 
 
 In a nutshell, it removes the need to define hard-coded string literals containing variable names, whose values may not be updated after a botched or automated refactoring.
 
