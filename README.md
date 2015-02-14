@@ -2,6 +2,20 @@
 
 *C# 6 equivalents in C# 5 by [@byteblastdev](https://twitter.com/ByteBlastDev). Inspired by [@addyosmani's](https://github.com/addyosmani) [document](https://github.com/addyosmani/es6-equivalents-in-es5) . Contributions are welcome.*
 
+## Index
+
+1. [Auto-property initializers](https://github.com/ByteBlast/c6-equivalents-in-c5#auto-property-initializers)
+2. [Getter-only properties](https://github.com/ByteBlast/c6-equivalents-in-c5#getter-only-properties)
+3. [Parameterless struct constructors](https://github.com/ByteBlast/c6-equivalents-in-c5#parameterless-struct-constructors)
+4. [Using Static](https://github.com/ByteBlast/c6-equivalents-in-c5#using-static)
+5. [Expression-bodied members](https://github.com/ByteBlast/c6-equivalents-in-c5#expression-bodied-members)
+6. [Index Initializers](https://github.com/ByteBlast/c6-equivalents-in-c5#index-initializers)
+8. [Await in catch/finally](https://github.com/ByteBlast/c6-equivalents-in-c5#await-in-catchfinally)
+9. [Exception filters](https://github.com/ByteBlast/c6-equivalents-in-c5#exception-filters)
+10. [Null-conditional operator](https://github.com/ByteBlast/c6-equivalents-in-c5#null-conditional-operator)
+11. [String interpolation](https://github.com/ByteBlast/c6-equivalents-in-c5#string-interpolation)
+12. [nameof operator](https://github.com/ByteBlast/c6-equivalents-in-c5#nameof-operator)
+
 ## Auto-property initializers
 
 Auto-property initializers can be used to succinctly associate a default value with a property. They are syntactically similar to field initializers. 
