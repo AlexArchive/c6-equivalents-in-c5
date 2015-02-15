@@ -315,7 +315,7 @@ C# 6:
 ```c#
 var expected = 201;
 var actual = 404;
-throw new Exception("Expected status code to be \{expected}, but instead was \{actual}.");
+throw new Exception($"Expected status code to be {expected}, but instead was {actual}.");
 ```
 
 C# 5:
@@ -324,9 +324,6 @@ var expected = 201;
 var actual = 404;
 throw new Exception(string.Format("Expected status code to be {0}, but instead was {1}.", expected, actual));
 ```
-
-It should be noted that the syntax rules for string interpolation are expected to change prior to the final release.
-
 
 ##nameof operator
 
