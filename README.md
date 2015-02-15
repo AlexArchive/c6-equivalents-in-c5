@@ -118,6 +118,7 @@ public class Program
     private static void Main()
     {
         Title = "Demo";
+        Write("Please enter your name: ");
         var name = ReadLine();
         ForegroundColor = ConsoleColor.Red;
         Write("Hello ");
@@ -137,6 +138,7 @@ public class Program
 	private static void Main()
 	{
 		Console.Title = "Demo";
+		Console.Write("Please enter your name: ");
 		var name = Console.ReadLine();
 		Console.ForegroundColor = ConsoleColor.Red;
 		Console.Write("Hello ");
