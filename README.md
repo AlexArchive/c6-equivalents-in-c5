@@ -130,7 +130,7 @@ public class Program
 
 C# 5:
 ```c#
-using System;
+using static System;
 	
 public class Program
 {
@@ -146,7 +146,6 @@ public class Program
 	}
 }
 ```
-It should be noted that the syntax rules for using static are expected to change prior to the final release.
 
 ## Expression-bodied members 
 
