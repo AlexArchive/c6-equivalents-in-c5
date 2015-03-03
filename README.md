@@ -236,7 +236,7 @@ if (capturedException != null)
 ```	
 ## Exception filters
 
-Exception filters allow you to conditionally `catch` exceptions according to a *filter*. If the filter expression returns `false` then the exception will not be handled by that particular `catch` block. 
+Exception filters allow you to conditionally `catch` exceptions according to a filter. If the filter expression returns `false` then the exception will not be handled by that particular `catch` block. 
 
 C# 6: 
 ```c#
