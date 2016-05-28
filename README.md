@@ -187,7 +187,7 @@ var postData = new Dictionary<string, string>
     ["username"] = "admin",
     ["password"] = "password",
     ["authToken"] = "123"
-}
+};
 ```
 
 C# 5: 
