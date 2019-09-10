@@ -325,7 +325,7 @@ var actual = 404;
 throw new Exception(string.Format("Expected status code to be {0}, but instead was {1}.", expected, actual));
 ```
 
-##nameof operator
+## nameof operator
 
 The `nameof` operator takes an identifier (such as a variable name or method name) and returns that object's name as a string. 
 
